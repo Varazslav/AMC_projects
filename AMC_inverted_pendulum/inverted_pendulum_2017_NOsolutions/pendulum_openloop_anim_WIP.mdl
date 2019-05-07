@@ -18,7 +18,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.299"
+    ComputedModelVersion    "1.300"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -89,7 +89,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[695.0, 498.0]
 	ZoomFactor		[0.8]
-	Offset			[-150.36059526120218, -149.70558703324517]
+	Offset			[-157.31029722305831, -44.340225158480429]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -126,9 +126,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Varazslav"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 07 16:31:25 2019"
-  RTWModifiedTimeStamp	  479147450
-  ModelVersionFormat	  "1.%<AutoIncrement:299>"
+  LastModifiedDate	  "Tue May 07 19:18:11 2019"
+  RTWModifiedTimeStamp	  479157474
+  ModelVersionFormat	  "1.%<AutoIncrement:300>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1371,7 +1371,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "68"
+    SIDHighWatermark	    "80"
     Block {
       BlockType		      DiscretePulseGenerator
       Name		      "Angle\nDisturbancies"
@@ -1380,7 +1380,6 @@ Model {
       Position		      [15, -51, 45, -19]
       ZOrder		      35
       PulseType		      "Time based"
-      Amplitude		      "0.5"
       Period		      "5"
       PulseWidth	      "10"
     }
@@ -1391,6 +1390,14 @@ Model {
       Position		      [15, 55, 45, 85]
       ZOrder		      29
       Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "76"
+      Position		      [15, 385, 45, 415]
+      ZOrder		      294
+      Value		      "1.5"
     }
     Block {
       BlockType		      Gain
@@ -1418,8 +1425,9 @@ Model {
       BlockType		      ManualSwitch
       Name		      "Manual Switch1"
       SID		      "58"
-      Position		      [180, 102, 230, 158]
+      Position		      [190, 97, 240, 153]
       ZOrder		      28
+      CurrentSetting	      "0"
     }
     Block {
       BlockType		      ManualSwitch
@@ -1427,6 +1435,14 @@ Model {
       SID		      "64"
       Position		      [80, 162, 130, 218]
       ZOrder		      34
+      CurrentSetting	      "0"
+    }
+    Block {
+      BlockType		      ManualSwitch
+      Name		      "Manual Switch3"
+      SID		      "71"
+      Position		      [270, 112, 320, 168]
+      ZOrder		      289
       CurrentSetting	      "0"
     }
     Block {
@@ -1450,9 +1466,20 @@ Model {
       Position		      [15, 224, 45, 256]
       ZOrder		      33
       PulseType		      "Time based"
-      Amplitude		      "2"
       Period		      "20"
-      PulseWidth	      "5"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator1"
+      SID		      "80"
+      Ports		      [0, 1]
+      Position		      [15, 329, 45, 361]
+      ZOrder		      298
+      PulseType		      "Time based"
+      Amplitude		      "3"
+      Period		      "20"
+      PulseWidth	      "50"
     }
     Block {
       BlockType		      Saturate
@@ -1645,6 +1672,18 @@ Model {
     }
     Block {
       BlockType		      Sum
+      Name		      "Subtract"
+      SID		      "79"
+      Ports		      [2, 1]
+      Position		      [90, 337, 120, 368]
+      ZOrder		      297
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
       Name		      "Sum1"
       SID		      "56"
       Ports		      [2, 1]
@@ -1678,8 +1717,8 @@ Model {
       Ports		      [0, 1]
       Position		      [15, 150, 45, 180]
       ZOrder		      26
-      Amplitude		      "1.2"
-      Frequency		      "0.05"
+      Amplitude		      "2"
+      Frequency		      "0.8"
       SampleTime	      "0"
     }
     Block {
@@ -1883,9 +1922,9 @@ Model {
 	  "Vector', 'ZoomFactor', 'Antialiasing', 'Headlight', 'Lighting', 'NavPanel', 'Sound', 'StatusBar', 'Stereo3D', 'Ster"
 	  "eo3DCameraOffset', 'Stereo3DHIT', 'ToolBar', 'Textures', 'Transparency', 'Triad', 'Wireframe', 'NavZones', 'NavMode"
 	  "', 'NavSpeed', 'CaptureFileFormat', 'CaptureFileName', 'Record2DCompressMethod', 'Record2DCompressQuality', 'Record"
-	  "2D', 'Record2DFileName', 'Record2DFPS'; [8.2200000000000000e+02   1.8000000000000000e+02   5.7600000000000000e+02  "
+	  "2D', 'Record2DFileName', 'Record2DFPS'; [7.8200000000000000e+02   2.4800000000000000e+02   5.7600000000000000e+02  "
 	  " 3.5000000000000000e+02], '', '', 'on', [0.0000000000000000e+00   0.0000000000000000e+00  -1.0000000000000000e+00],"
-	  " [0.0000000000000000e+00   0.0000000000000000e+00   4.0000000000000000e+00], [0.0000000000000000e+00   1.0000000000"
+	  " [0.0000000000000000e+00   0.0000000000000000e+00   3.0000000000000000e+00], [0.0000000000000000e+00   1.0000000000"
 	  "000000e+00   0.0000000000000000e+00], [1.0000000000000000e+00], 'on', 'on', 'on', 'halfbar', 'on', 'on', 'off', [1."
 	  "0000000149011612e-01], [0.0000000000000000e+00], 'on', 'on', 'on', 'none', 'off', 'off', 'walk', 'normal', 'tif', '"
 	  "%f_anim_%n.tif', 'auto', [7.5000000000000000e+01], 'off', '%f_anim_%n.avi', 'auto'} "
@@ -2235,7 +2274,7 @@ Model {
       ZOrder		      140
       SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [75, 0; 0, 45]
+      Points		      [75, 0; 0, 40]
       DstBlock		      "Manual Switch1"
       DstPort		      1
     }
@@ -2243,8 +2282,7 @@ Model {
       ZOrder		      142
       SrcBlock		      "Manual Switch1"
       SrcPort		      1
-      Points		      [118, 0; 0, -100; 677, 0]
-      DstBlock		      "Sum1"
+      DstBlock		      "Manual Switch3"
       DstPort		      1
     }
     Line {
@@ -2310,7 +2348,7 @@ Model {
       ZOrder		      183
       SrcBlock		      "Manual Switch2"
       SrcPort		      1
-      Points		      [20, 0; 0, -45]
+      Points		      [21, 0; 0, -50]
       DstBlock		      "Manual Switch1"
       DstPort		      2
     }
@@ -2374,6 +2412,37 @@ Model {
 	  DstPort		  2
 	}
       }
+    }
+    Line {
+      ZOrder		      230
+      SrcBlock		      "Manual Switch3"
+      SrcPort		      1
+      Points		      [73, 0; 0, -110; 632, 0]
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      237
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [17, 0; 0, -40]
+      DstBlock		      "Subtract"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      246
+      SrcBlock		      "Pulse\nGenerator1"
+      SrcPort		      1
+      DstBlock		      "Subtract"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      245
+      SrcBlock		      "Subtract"
+      SrcPort		      1
+      Points		      [129, 0; 0, -200]
+      DstBlock		      "Manual Switch3"
+      DstPort		      2
     }
   }
 }
